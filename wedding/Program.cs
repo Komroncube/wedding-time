@@ -1,6 +1,6 @@
 ﻿namespace wedding
 {
-    internal class Program
+    internal class Program<T>
     {
         static void Main(string[] args)
         {
@@ -8,16 +8,16 @@
         }
         public class Person
         {
-            public Person(string name):this(name, false)
+            public Person(T name):this(name, false)
             {
                 Name= name;
             }
-            public Person(string name, bool uylandimi)
+            public Person(T name, bool uylandimi)
             {
                 Name= name;
                 IsMarried= uylandimi;
             }
-            public Person(string name, bool isMarried, Person pair)
+            public Person(T name, bool isMarried, Person pair)
             {
                 Name= name;
                 IsMarried= isMarried;
@@ -54,7 +54,7 @@
                 }    
             }
 
-            public string Name { get; set; }
+            public T Name { get; set; }
             public bool IsMarried { get; set; }
             public Person Pair { get; set; }
                 

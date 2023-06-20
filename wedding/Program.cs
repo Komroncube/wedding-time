@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-
+            Person<string> Odil = new Person<string>("Odil", false);
         }
-        public class Person
+        public class Person<T>
         {
             public Person(T name):this(name, false)
             {
@@ -17,7 +17,7 @@
                 Name= name;
                 IsMarried= uylandimi;
             }
-            public Person(T name, bool isMarried, Person pair)
+            public Person(T name, bool isMarried, Person<T> pair)
             {
                 Name= name;
                 IsMarried= isMarried;
@@ -27,7 +27,7 @@
                 }
                 
             }
-            public void Love(Person second)
+            public void Love(Person<T> second)
             {
                 if (this.IsMarried==false && second.IsMarried==false)
                 {
@@ -38,7 +38,7 @@
                 }
                 
             }
-            public static void Marriage(Person p1, Person p2)
+            public static void Marriage(Person<T> p1, Person<T> p2)
             {
                 if (p1.IsMarried==false && p2.IsMarried==false)
                 {
@@ -56,7 +56,7 @@
 
             public T Name { get; set; }
             public bool IsMarried { get; set; }
-            public Person Pair { get; set; }
+            public Person<T> Pair { get; set; }
                 
         }
     }
